@@ -80,32 +80,54 @@
     @yield('scripts')
 
     <script>
-        // $(function() {
-        //     $("#example1").DataTable({
-        //         "responsive": true,
-        //         "lengthChange": false,
-        //         "autoWidth": false,
-        //         "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        //     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        //     $('#example2').DataTable({
-        //         "paging": true,
-        //         "lengthChange": false,
-        //         "searching": false,
-        //         "ordering": true,
-        //         "info": true,
-        //         "autoWidth": false,
-        //         "responsive": true,
-        //     });
-        // });
-
-
         $(function() {
-            // $('.select2').select2()
-
             $('.select2bs4').select2({
                 theme: 'bootstrap4'
             })
         });
+
+        // Disable right-click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+                (e.ctrlKey && e.key === 'U')) {
+                e.preventDefault();
+            }
+        });
+
+        // Disable text selection and copying
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+        });
+
+        // Additional measures to prevent viewing source
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'S') { // Prevent Ctrl+S
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.key === 'P') { // Prevent Ctrl+P
+                e.preventDefault();
+            }
+        });
+
+        // Prevent dragging
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+
+        // Prevent printing
+        window.onbeforeprint = function() {
+            return false;
+        };
     </script>
     <script>
         // session alert

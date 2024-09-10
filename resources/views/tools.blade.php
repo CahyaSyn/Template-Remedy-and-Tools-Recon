@@ -26,7 +26,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary mt-3">Import Files</button>
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <button type="submit" class="btn btn-primary mt-3">Import Files</button>
+                                            </div>
+                                            <div>
+                                                <a href="{{ asset('TEMPLATE_ARP - Copy.xlsx') }}" class="btn btn-success mt-3">Download Template</a>
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
 
@@ -39,6 +46,18 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h5>Notes</h5>
+                    <ul>
+                        <li>Download Template</li>
+                        <li>Masukkan hasil rekon ke DATA_RECON sesuai header</li>
+                        <li>Masukkan hasil rekon already success ke DATA_RECON sesuai header</li>
+                        <li>Masukan hasil pengecekan LOS, ARPU, PROFILE, DOM dan NGRS ke masing - masing sheetname sesuai header</li>
+                        <li>Import template yang sudah di isi</li>
+                    </ul>
                 </div>
             </div>
         </div>
