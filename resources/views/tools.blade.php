@@ -19,7 +19,7 @@
                                 <div class="tab-pane active" id="recon_arp">
                                     <div class="row">
                                         <div class="col">
-                                            <form action="{{ route('tools.importFiles') }}" method="POST" enctype="multipart/form-data">
+                                            <form action="{{ route('tools.importFilesArp') }}" method="POST" enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="row">
                                                     <div class="col">
@@ -34,7 +34,7 @@
                                                         <button type="submit" class="btn btn-primary mt-3">Process File Recon</button>
                                                     </div>
                                                     <div>
-                                                        <a href="{{ asset('TEMPLATE_ARP - Copy.xlsx') }}" class="btn btn-success mt-3">Download Template</a>
+                                                        <a href="{{ asset('TEMPLATE_ARP.xlsx') }}" class="btn btn-success mt-3">Download Template</a>
                                                     </div>
                                                 </div>
                                             </form>
@@ -68,7 +68,42 @@
                                 <div class="tab-pane" id="recon_vas">
                                     <div class="row">
                                         <div class="col">
-                                            <p>Sedang dalam pengerjaan</p>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <form action="{{ route('tools.importFilesVas') }}" method="POST" enctype="multipart/form-data">
+                                                        @csrf
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="custom-file">
+                                                                    <input type="file" class="custom-file-input" id="recon_file_vas" name="recon_file_vas">
+                                                                    <label class="custom-file-label" for="recon_file_vas">Choose file RECON_VAS.xlsx</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between">
+                                                            <div>
+                                                                <button type="submit" class="btn btn-primary mt-3">Process File Recon</button>
+                                                            </div>
+                                                            <div>
+                                                                <a href="{{ asset('TEMPLATE_VAS.xlsx') }}" class="btn btn-success mt-3">Download Template</a>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col">
+                                            <h5>Notes :</h5>
+                                            <ul>
+                                                <li>Download Template.xlsx</li>
+                                                <li>Masukkan <i><u>Hasil Recon</u></i> ke sheet <b>DATA_RECON</b> sesuai header</li>
+                                                <li>Masukkan <i><u>Hasil Recon Already Success</u></i> ke sheet <b>ALREADY_SUCCESS</b> sesuai header</li>
+                                                <li>Masukkan <i><u>Hasil pengecekan DOM</u></i> ke sheetname <b>DOM</b> sesuai header</li>
+                                                <li>Upload file kemudian klik <b>Process File Recon</b></li>
+                                                <li>Pastikan file di <i><b>cek kembali</b></i> untuk antisipasi jika terdapat anomaly</li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -82,7 +117,43 @@
                                 <div class="tab-pane" id="recon_injectvf">
                                     <div class="row">
                                         <div class="col">
-                                            <p>Sedang dalam pengerjaan</p>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <form action="{{ route('tools.importFilesVf') }}" method="POST" enctype="multipart/form-data">
+                                                        @csrf
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="custom-file">
+                                                                    <input type="file" class="custom-file-input" id="recon_file_vf" name="recon_file_vf">
+                                                                    <label class="custom-file-label" for="recon_file_vf">Choose file RECON_VF.xlsx</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between">
+                                                            <div>
+                                                                <button type="submit" class="btn btn-primary mt-3">Process File Recon</button>
+                                                            </div>
+                                                            <div>
+                                                                <a href="{{ asset('TEMPLATE_VF.xlsx') }}" class="btn btn-success mt-3">Download Template</a>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col">
+                                            <h5>Notes :</h5>
+                                            <ul>
+                                                <li>Download Template.xlsx</li>
+                                                <li>Masukkan <i><u>Hasil Recon</u></i> ke sheet <b>DATA_RECON</b> sesuai header</li>
+                                                <li>Masukkan <i><u>Hasil Recon Already Success</u></i> ke sheet <b>ALREADY_SUCCESS</b> sesuai header</li>
+                                                <li>Masukkan <i><u>Hasil pengecekan DOM</u></i> ke sheetname <b>DOM</b> sesuai header</li>
+                                                <li>Masukkan <i><u>Hasil pengecekan URP</u></i> ke sheetname <b>URP</b> sesuai header</li>
+                                                <li>Upload file kemudian klik <b>Process File Recon</b></li>
+                                                <li>Pastikan file di <i><b>cek kembali</b></i> untuk antisipasi jika terdapat anomaly</li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>

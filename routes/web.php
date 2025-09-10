@@ -1,14 +1,17 @@
 <?php
 
+use App\Models\Kedb;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PicController;
+use App\Http\Controllers\SopController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KedbController;
+use App\Http\Controllers\ToolsController;
+use App\Http\Controllers\ToolsVFController;
+use App\Http\Controllers\ToolsArpController;
+use App\Http\Controllers\ToolsVasController;
 use App\Http\Controllers\TicketlistController;
 use App\Http\Controllers\ApplicationController;
-use App\Http\Controllers\SopController;
-use App\Http\Controllers\ToolsController;
-use App\Models\Kedb;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,8 +58,6 @@ Route::get('getchild', [KedbController::class, 'getchild'])->name('kedb.getchild
 
 // tools
 Route::get('tools', [ToolsController::class, 'index'])->name('tools.index');
-Route::post('tools-import', [ToolsController::class, 'importFiles'])->name('tools.importFiles');
-Route::post('tools-download', [ToolsController::class, 'download'])->name('tools.download');
-Route::get('tools-download', function () {
-    return 'This route is accessed via GET';
-});
+Route::post('tools-import-arp', [ToolsArpController::class, 'importFilesArp'])->name('tools.importFilesArp');
+Route::post('tools-import-vas', [ToolsVasController::class, 'importFilesVas'])->name('tools.importFilesVas');
+Route::post('tools-import-vf', [ToolsVFController::class, 'importFilesVf'])->name('tools.importFilesVf');
