@@ -11,7 +11,7 @@ Aplikasi ini dirancang sebagai portfolio project dengan fitur lengkap mulai dari
 
 ## 🚀 Tech Stack
 - **Framework:** Laravel (PHP)  
-- **Frontend:** Blade, TailwindCSS, JavaScript  
+- **Frontend:** Blade, Bootstrap, JavaScript  
 - **Database:** MySQL / MariaDB  
 - **Libraries & Tools:**  
   - Laravel Excel (maatwebsite/excel)  
